@@ -1,0 +1,29 @@
+
+$hue : 72px;
+$saturation : 3px;
+$lightness: 45px;
+$lightcolor : rgb(0, 0, 0); 
+$amountcolor : 100;
+$common-text-size : 20px;
+
+
+// @function mycol($hue, $saturation, $lightness){
+// @return  $hue, $saturation, $lightness;  
+// }
+
+// h1{
+//     text-shadow: mycol($hue, $saturation, $lightness)!important;
+// }
+
+.text-white-75{
+color: darken($lightcolor, $amountcolor);
+font-size: $common-text-size;
+}
+
+@function section-height($height){
+ @return $height;
+}
+
+.about-height{
+    height: section-height($height: 500px);
+}

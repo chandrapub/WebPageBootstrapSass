@@ -1,0 +1,21 @@
+
+.nav-link
+{
+    color: $nav-text-color !important;
+    font-size: $nav-text-size;
+    // @include my-gradient;
+}
+
+#logo img{
+    width: $nav-logo-width;
+    float: left;
+}
+.name{
+    font-size: $nav-name-size;
+    font-weight: bold;
+}
+
+.title{
+    font-size: $nav-title-size;
+    font-weight: bold;
+}

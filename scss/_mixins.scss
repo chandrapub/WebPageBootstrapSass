@@ -1,0 +1,55 @@
+@mixin my-gradient {
+    background: linear-gradient($brand-secondary, #d9f8e3);
+    
+}
+
+// @mixin masterhead-gradient {
+//     background: linear-gradient(to bottom,rgba(20, 197, 241, 0.3) 0%,rgba(238, 234, 231, 0.8) 100%), url('../img/bg2.jpg');
+//     background-position: center;
+//     background-repeat: none;
+//     background-size: cover;
+//     background-attachment: scroll;
+    
+// }
+.bg-color{
+    @include my-gradient;
+}
+
+@mixin web-btn($color, $bgcolor){
+    background:$bgcolor;
+    font-size: 20px;
+    text-decoration: none;
+    color: $color;
+    // padding: 10px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    &:hover{
+        background: rgb(158, 126, 126);
+    }
+}
+
+.btn-freelance{
+    @include web-btn(#ecd6d6, #4b2b2b);
+}
+
+.btn-hire{
+    @include web-btn(#f0dddd, #243329);
+}
+
+@mixin projectMargin{
+    margin:20px;
+}
+
+.projectMargin{
+    @include projectMargin;
+}
+
+// @mixin section-height1 {
+//     height: 500px;
+// }
+
+// $abtheight: 500px;
+// .about-height{
+//     @include section-height;
+// }

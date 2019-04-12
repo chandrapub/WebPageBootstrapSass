@@ -1,0 +1,23 @@
+
+@mixin masterhead-gradient {
+    background: linear-gradient(to bottom,rgba(71, 105, 114, 0.3) 0%,rgba(238, 234, 231, 0.8) 100%), url('../img/bg5.jpg');
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    background-attachment: scroll;
+    
+}
+
+.masthead{
+    @include masterhead-gradient;
+    
+}
+
+.divider{
+    border-width: $headline-divider;
+    border-color: $brand-primary;
+}
+
+@function bodyTextSize(){
+    @return 15px;
+}

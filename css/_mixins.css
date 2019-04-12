@@ -1,0 +1,21 @@
+.btn-freelance {
+  background: #4b2b2b;
+  font-size: 20px;
+  text-decoration: none;
+  color: #ecd6d6;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: inline-block; }
+  .btn-freelance:hover {
+    background: #9e7e7e; }
+
+.btn-hire {
+  background: #243329;
+  font-size: 20px;
+  text-decoration: none;
+  color: #f0dddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: inline-block; }
+  .btn-hire:hover {
+    background: #9e7e7e; }

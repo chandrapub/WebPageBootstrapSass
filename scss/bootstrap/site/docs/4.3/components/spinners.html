@@ -1,0 +1,153 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>spinners.md</title>
+      </head>
+      <body>
+        <hr>
+<p>layout: docs
+title: Spinners
+description: Indicate the loading state of a component or page with Bootstrap spinners, built entirely with HTML, CSS, and no JavaScript.
+group: components</p>
+<h2 id="toc-true">toc: true</h2>
+<h2 id="about">About</h2>
+<p>Bootstrap &quot;spinners&quot; can be used to show the loading state in your projects. They&#39;re built only with HTML and CSS, meaning you don&#39;t need any JavaScript to create them. You will, however, need some custom JavaScript to toggle their visibility. Their appearance, alignment, and sizing can be easily customized with our amazing utility classes.</p>
+<p>For accessibility purposes, each loader here includes <code>role=&quot;status&quot;</code> and a nested <code>&lt;span class=&quot;sr-only&quot;&gt;Loading...&lt;/span&gt;</code>.</p>
+<h2 id="border-spinner">Border spinner</h2>
+<p>Use the border spinners for a lightweight loading indicator.</p>
+<p>{% capture example %}</p>
+<p><div class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<h3 id="colors">Colors</h3>
+<p>The border spinner uses <code>currentColor</code> for its <code>border-color</code>, meaning you can customize the color with [text color utilities][color]. You can use any of our text color utilities on the standard spinner.</p>
+<p>{% capture example %}
+{% for color in site.data.theme-colors %}</p>
+<p><div class="spinner-border text-{{ color.name }}" role="status">
+  <span class="sr-only">Loading...</span>
+</div>{% endfor %}
+{% endcapture %}
+{% include example.html content=example %}</p>
+<p>{% capture callout %}
+<strong>Why not use <code>border-color</code> utilities?</strong> Each border spinner specifies a <code>transparent</code> border for at least one side, so <code>.border-{color}</code> utilities would override that.
+{% endcapture %}
+{% include callout.html content=callout type=&quot;info&quot; %}</p>
+<h2 id="growing-spinner">Growing spinner</h2>
+<p>If you don&#39;t fancy a border spinner, switch to the grow spinner. While it doesn&#39;t technically spin, it does repeatedly grow!</p>
+<p>{% capture example %}</p>
+<p><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<p>Once again, this spinner is built with <code>currentColor</code>, so you can easily change its appearance with [text color utilities][color]. Here it is in blue, along with the supported variants.</p>
+<p>{% capture example %}
+{% for color in site.data.theme-colors %}</p>
+<p><div class="spinner-grow text-{{ color.name }}" role="status">
+  <span class="sr-only">Loading...</span>
+</div>{% endfor %}
+{% endcapture %}
+{% include example.html content=example %}</p>
+<h2 id="alignment">Alignment</h2>
+<p>Spinners in Bootstrap are built with <code>rem</code>s, <code>currentColor</code>, and <code>display: inline-flex</code>. This means they can easily be resized, recolored, and quickly aligned.</p>
+<h3 id="margin">Margin</h3>
+<p>Use [margin utilities][margin] like <code>.m-5</code> for easy spacing.</p>
+<p>{% capture example %}</p>
+<p><div class="spinner-border m-5" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<h3 id="placement">Placement</h3>
+<p>Use [flexbox utilities][flex], [float utilities][float], or [text alignment][text] utilities to place spinners exactly where you need them in any situation.</p>
+<h4 id="flex">Flex</h4>
+<p>{% capture example %}</p>
+<p><div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<p>{% capture example %}</p>
+<p><div class="d-flex align-items-center">
+  <strong>Loading...</strong>
+  <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+</div>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<h4 id="floats">Floats</h4>
+<p>{% capture example %}</p>
+<p><div class="clearfix">
+  <div class="spinner-border float-right" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<h4 id="text-align">Text align</h4>
+<p>{% capture example %}</p>
+<p><div class="text-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<h2 id="size">Size</h2>
+<p>Add <code>.spinner-border-sm</code> and <code>.spinner-grow-sm</code> to make a smaller spinner that can quickly be used within other components.</p>
+<p>{% capture example %}</p>
+<p><div class="spinner-border spinner-border-sm" role="status">
+  <span class="sr-only">Loading...</span>
+</div></p>
+<p><div class="spinner-grow spinner-grow-sm" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<p>Or, use custom CSS or inline styles to change the dimensions as needed.</p>
+<p>{% capture example %}</p>
+<p><div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+  <span class="sr-only">Loading...</span>
+</div></p>
+<p><div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<h2 id="buttons">Buttons</h2>
+<p>Use spinners within buttons to indicate an action is currently processing or taking place. You may also swap the text out of the spinner element and utilize button text as needed.</p>
+<p>{% capture example %}</p>
+<p><button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  <span class="sr-only">Loading...</span>
+</button></p>
+<p><button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<p>{% capture example %}</p>
+<p><button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+  <span class="sr-only">Loading...</span>
+</button></p>
+<p><button class="btn btn-primary" type="button" disabled>
+  <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button>
+{% endcapture %}
+{% include example.html content=example %}</p>
+<p>[color]:   {{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/colors/
+[display]: {{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/display/
+[flex]:    {{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/flex/
+[float]:   {{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/float/
+[margin]:  {{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/spacing/
+[sizing]:  {{ site.baseurl }}/docs/{{ site.docs_version }}/utilities/sizing/
+[text]:    {{ site.baseurl }}/docs/{{ site.docs_version }}/content/typography/</p>
+
+      </body>
+    </html>
